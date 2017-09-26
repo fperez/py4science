@@ -20,7 +20,7 @@ def print_vk(lst):
     fmt = '%'+str(longest_key)+'s -> %s'
     # Do actual printing
     for v,k in lst:
-        print fmt % (k,v)
+        print (fmt % (k,v))
 
 def freq_summ(freqs,n=10):
     """Print a simple summary of a word frequencies dictionary.
@@ -33,15 +33,15 @@ def freq_summ(freqs,n=10):
 
     words,counts = freqs.keys(),freqs.values()
     # Sort by count
-    items = zip(counts,words)
-    items.sort()
+    items = sorted(zip(counts,words))
 
-    print 'Number of words:',len(freqs)
-    print
-    print '%d least frequent words:' % n
+
+    print('Number of words:',len(freqs))
+    print()
+    print('%d least frequent words:' % n)
     print_vk(items[:n])
-    print
-    print '%d most frequent words:' % n
+    print()
+    print('%d most frequent words:' % n)
     print_vk(items[-n:])
 
 if __name__ == '__main__':
